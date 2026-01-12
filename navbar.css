@@ -1,0 +1,78 @@
+/* ==== Navbar ==== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+}
+
+.logo span {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #FDBA74;
+}
+
+.btn-login {  
+  background-color: #fdbb7496;
+  color: #F97316;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.btn-login:hover {
+  background-color: #FB923C;
+  color: white;
+}
+
+.notif-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+.notif-item strong {
+    color: #ff7b00;
+}
+.reminder {
+    margin-top: 4px;
+    color: #d9534f;
+    font-weight: bold;
+}
+.empty-notif {
+    padding: 15px;
+    text-align: center;
+    color: #777;
+}

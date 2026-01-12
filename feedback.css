@@ -1,0 +1,446 @@
+/* ============================= */
+/* Feedback Form Card Styles */
+/* ============================= */
+
+.feedback-form-card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.feedback-form-card h2 {
+    color: #ff7300;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ============================= */
+/* Form Group Styles */
+/* ============================= */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+    font-size: 15px;
+}
+
+.form-group label i {
+    color: #ff7300;
+    margin-right: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #ff7300;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 115, 0, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-group small {
+    color: #999;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+}
+
+/* ============================= */
+/* Submit Button */
+/* ============================= */
+
+.submit-btn {
+    background: linear-gradient(135deg, #ff7300 0%, #ff9500 100%);
+    color: white;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 115, 0, 0.3);
+}
+
+.submit-btn i {
+    font-size: 14px;
+}
+
+/* ============================= */
+/* Feedback History Card */
+/* ============================= */
+
+.feedback-history-card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Header + search container */
+.feedback-header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.feedback-header-top h2 {
+    color: #ff7300;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+}
+
+/* Search box inside header */
+.feedback-header-top .feedback-search {
+    width: 300px; /* adjust as needed */
+}
+
+.feedback-header-top .feedback-search .search-box {
+    width: 100%;
+}
+
+/* ============================= */
+/* Feedback Item Styles */
+/* ============================= */
+
+.feedback-item {
+    background: #fff8f0;
+    border-left: 4px solid #ff7300;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.feedback-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.feedback-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 12px;
+}
+
+.feedback-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.feedback-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.feedback-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.feedback-meta i {
+    font-size: 12px;
+}
+
+/* ============================= */
+/* Status Badges */
+/* ============================= */
+
+.feedback-status {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.status-pending {
+    background: #fff4e5;
+    color: #ff9800;
+}
+
+.status-reviewed {
+    background: #e3f2fd;
+    color: #2196f3;
+}
+
+.status-resolved {
+    background: #e8f5e9;
+    color: #4caf50;
+}
+
+/* ============================= */
+/* Feedback Content */
+/* ============================= */
+
+.feedback-message {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.feedback-category {
+    display: inline-block;
+    padding: 4px 12px;
+    background: #f0f0f0;
+    border-radius: 15px;
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* ============================= */
+/* Response Count Badge */
+/* ============================= */
+
+.response-count {
+    background: #4caf50;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    margin-left: 8px;
+    font-weight: 600;
+}
+
+/* ============================= */
+/* Expand Icon */
+/* ============================= */
+
+.expand-icon {
+    transition: transform 0.3s ease;
+    font-size: 12px;
+    color: #999;
+}
+
+.feedback-item.expanded .expand-icon {
+    transform: rotate(180deg);
+}
+
+/* ============================= */
+/* Admin Responses Section */
+/* ============================= */
+
+.admin-responses {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px dashed #e0e0e0;
+    display: none;
+}
+
+.feedback-item.expanded .admin-responses {
+    display: block;
+}
+
+.admin-responses h4 {
+    color: #4caf50;
+    margin-bottom: 12px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ============================= */
+/* Response Item Styles */
+/* ============================= */
+
+.response-item {
+    background: white;
+    border-left: 3px solid #4caf50;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.response-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.admin-badge {
+    background: #4caf50;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.response-date {
+    font-size: 12px;
+    color: #999;
+}
+
+.response-message {
+    color: #555;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+/* ============================= */
+/* No Feedback State */
+/* ============================= */
+
+.no-feedback {
+    text-align: center;
+    padding: 60px 20px;
+    color: #999;
+}
+
+.no-feedback i {
+    font-size: 4rem;
+    color: #ff9500;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.no-feedback h3 {
+    color: #666;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.no-feedback p {
+    color: #999;
+    font-size: 14px;
+}
+
+/* ============================= */
+/* Loading & Empty States */
+/* ============================= */
+
+.loading-state,
+.empty-state {
+    text-align: center;
+    padding: 20px;
+    color: #999;
+}
+
+.loading-state i {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.empty-state i {
+    font-size: 2rem;
+    color: #ddd;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* ============================= */
+/* Responsive Design */
+/* ============================= */
+
+@media (max-width: 768px) {
+    .feedback-form-card,
+    .feedback-history-card {
+        padding: 20px;
+    }
+
+    .feedback-form-card h2,
+    .feedback-history-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .feedback-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .feedback-header-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .feedback-header-top .feedback-search {
+        width: 100%;
+    }
+
+    .feedback-title {
+        font-size: 16px;
+    }
+
+    .feedback-meta {
+        font-size: 12px;
+    }
+
+    .submit-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 13px;
+        padding: 10px 12px;
+    }
+
+    .feedback-item {
+        padding: 15px;
+    }
+}

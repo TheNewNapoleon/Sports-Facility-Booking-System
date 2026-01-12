@@ -1,0 +1,243 @@
+/* ==== Profile Sections ==== */
+.profile-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.card-logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 50px;
+}
+
+.card-logo img {
+    width: 100%;
+    height: auto;
+}
+
+.card-content.two-column {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.left-col {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-col {
+    flex: 2;
+}
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* ==== Edit Form ==== */
+.edit-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.edit-form input, 
+.edit-form select {
+    width: 100%;
+    padding: 6px;
+    margin-top: 4px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* ==== Luxury Card Layout ==== */
+.luxury-card {
+    padding: 25px;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+}
+
+.luxury-wrapper {
+    display: flex;
+    gap: 30px;
+    align-items: stretch;
+}
+
+/* ==== Left Section: Profile Picture ==== */
+.luxury-left {
+    width: 40%;
+    text-align: center;
+    user-select: none;
+}
+
+.pfp-box {
+    width: 100%;
+    max-width: 220px;
+    height: 280px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 3px solid #e6e6e6;
+    background: #f7f7f7;
+    margin: 0 auto;
+}
+
+.pfp-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ==== Right Section: User Details ==== */
+.luxury-right {
+    width: 60%;
+    padding: 10px 15px;
+    background: #ff9500;
+    border-radius: 16px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.03);
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px 25px;
+    margin-bottom: 10px;
+}
+
+.details-grid p {
+    display: flex;
+    flex-direction: column; /* stack label and value */
+    background: #f7f7f7;
+    padding: 10px 12px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.04);
+    margin: 0;
+    font-size: 15px;
+}
+
+.details-grid p i {
+    color: #F97316;
+    font-size: 16px;
+    margin-bottom: 5px; /* spacing between icon and label/value */
+}
+
+.details-grid .label {
+    font-weight: 700;
+    color: #777;
+    margin-bottom: 2px;
+}
+
+.details-grid .value {
+    color: #0F172A;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+
+
+/* ==== Section Titles ==== */
+.section-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #F97316;
+}
+
+.section-title2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #f7f7f7;
+}
+
+/* ==== Profile Upload Section ==== */
+.profile-upload-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    border: 2px dashed #ddd;
+}
+
+.profile-upload-section label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+
+.upload-preview-container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.current-avatar-preview {
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #e6e6e6;
+    background: #fff;
+    flex-shrink: 0;
+}
+
+.current-avatar-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.upload-input-wrapper {
+    flex: 1;
+}
+
+.file-input {
+    display: none;
+}
+
+.file-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #F97316 0%, #ff6b35 100%);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.file-label:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+}
+
+.file-label i {
+    font-size: 18px;
+}
+
+.upload-input-wrapper small {
+    display: block;
+    margin-top: 8px;
+    color: #666;
+    font-size: 13px;
+}

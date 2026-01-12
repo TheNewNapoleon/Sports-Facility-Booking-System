@@ -1,0 +1,901 @@
+/* === General Reset === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+    color: #333;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,102,0,0.03) 0%, transparent 70%);
+    animation: bgPulse 20s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes bgPulse {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-5%, -5%) scale(1.1); }
+}
+
+/* === Logo === */
+.logo {
+    padding: 15px 30px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    animation: slideDown 0.5s ease-out;
+}
+
+.logo img {
+    max-width: 120px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+/* === Header / Navigation === */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #FF6600 0%, #ff8533 100%);
+    color: white;
+    padding: 20px 30px;
+    box-shadow: 0 4px 20px rgba(255,102,0,0.3);
+    position: relative;
+    overflow: hidden;
+    animation: slideDown 0.6s ease-out 0.1s both;
+    z-index: 10;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: headerShine 15s linear infinite;
+}
+
+@keyframes headerShine {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+nav {
+    position: relative;
+    z-index: 1;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #FFD700;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 80%;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #FFD700;
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+}
+
+/* === Section Titles === */
+main {
+    position: relative;
+    z-index: 1;
+}
+
+section {
+    margin: 40px auto;
+    width: 95%;
+    max-width: 1200px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.6s forwards;
+}
+
+section h2 {
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 600;
+    color: #FF6600;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #FF6600 0%, transparent 100%);
+    animation: expandWidth 0.8s ease-out;
+}
+
+section h3 {
+    margin: 30px 0 20px;
+    font-size: 20px;
+    color: #555;
+}
+
+/* === Dashboard Stats Cards === */
+.stats-container {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 40px;
+    animation: fadeUp 0.6s ease-out 0.3s both;
+}
+
+.stat-card {
+    flex: 1;
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #FF6600, #ff8533);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.stat-card:hover::before {
+    transform: scaleX(1);
+}
+
+.stat-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(255,102,0,0.2);
+}
+
+.stat-card h3 {
+    font-size: 16px;
+    margin: 0 0 15px 0;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.stat-card .count {
+    font-size: 36px;
+    font-weight: 700;
+    color: #FF6600;
+    display: block;
+    animation: countUp 1s ease-out;
+}
+
+@keyframes countUp {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* === Tables === */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    animation: fadeUp 0.6s ease-out 0.4s both;
+    table-layout: fixed;
+}
+
+/* Force thead and tbody to have the same layout */
+thead, tbody {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+thead tr, tbody tr {
+    display: table-row;
+    width: 100%;
+}
+
+th, td {
+    display: table-cell;
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 14px;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+/* ID column - centered and fixed width */
+th:nth-child(1), 
+td:nth-child(1) {
+    text-align: center;
+    width: 100px;
+}
+
+/* Second column width (Avatar for Users, User for others) */
+th:nth-child(2), 
+td:nth-child(2) {
+    width: 120px;
+}
+
+/* For User Management table - center the avatar column */
+table thead tr th:nth-child(2):not(:last-child),
+table tbody tr td:nth-child(2):not(:last-child) {
+    text-align: center;
+}
+
+/* Third column */
+th:nth-child(3), 
+td:nth-child(3) {
+    width: auto;
+}
+
+/* Fourth column */
+th:nth-child(4), 
+td:nth-child(4) {
+    width: 150px;
+}
+
+/* Fifth column */
+th:nth-child(5), 
+td:nth-child(5) {
+    width: 150px;
+}
+
+/* Sixth column (Status) */
+th:nth-child(6), 
+td:nth-child(6) {
+    width: 150px;
+}
+
+/* Action column - always last, centered and fixed width */
+th:last-child, 
+td:last-child {
+    text-align: center;
+    width: 250px;
+}
+
+th {
+    background: linear-gradient(135deg, #FF6600 0%, #ff8533 100%);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 13px;
+    position: relative;
+}
+
+th::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(255,255,255,0.3);
+}
+
+tbody tr {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+tbody tr::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: #FF6600;
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+tbody tr:hover::before {
+    transform: scaleY(1);
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tbody tr:hover {
+    background: linear-gradient(90deg, #ffe6cc 0%, #fff5e6 100%);
+    transform: scale(1.01);
+    box-shadow: 0 4px 12px rgba(255,102,0,0.1);
+}
+
+/* Avatar in table */
+table img.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #FF6600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: block;
+    margin: 0 auto;
+}
+
+table img.avatar:hover {
+    transform: scale(1.2) rotate(5deg);
+    box-shadow: 0 4px 16px rgba(255,102,0,0.3);
+}
+
+/* === Buttons === */
+button {
+    padding: 9px 18px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+button.add-btn { 
+    background: linear-gradient(135deg, #FF6600 0%, #ff8533 100%);
+    color: white;
+    margin-bottom: 15px;
+    padding: 12px 24px;
+    font-size: 14px;
+    box-shadow: 0 4px 15px rgba(255,102,0,0.3);
+}
+
+button.approve { 
+    background: linear-gradient(135deg, #28a745 0%, #34d058 100%); 
+    color: white;
+    box-shadow: 0 2px 10px rgba(40,167,69,0.3);
+}
+
+button.reject { 
+    background: linear-gradient(135deg, #dc3545 0%, #e74c3c 100%); 
+    color: white;
+    box-shadow: 0 2px 10px rgba(220,53,69,0.3);
+}
+
+button.edit { 
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); 
+    color: white;
+    box-shadow: 0 2px 10px rgba(0,123,255,0.3);
+}
+
+button.view { 
+    background: linear-gradient(135deg, #6c757d 0%, #545b62 100%); 
+    color: white;
+    box-shadow: 0 2px 10px rgba(108,117,125,0.3);
+}
+
+button.delete { 
+    background: linear-gradient(135deg, #d9534f 0%, #c9302c 100%); 
+    color: white;
+    box-shadow: 0 2px 10px rgba(217,83,79,0.3);
+}
+
+button.toggle { 
+    background: linear-gradient(135deg, #17a2b8 0%, #138496 100%); 
+    color: white;
+    box-shadow: 0 2px 10px rgba(23,162,184,0.3);
+}
+
+/* === Modals General === */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Blur the background content when modal is open */
+body.modal-open main,
+body.modal-open header,
+body.modal-open .logo,
+body.modal-open footer {
+    filter: blur(8px);
+    transition: filter 0.3s ease;
+}
+
+/* Prevent modal content from being blurred */
+body.modal-open .modal,
+body.modal-open .modal * {
+    filter: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    animation: modalSlideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+@keyframes modalSlideUp {
+    from { 
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 15px; 
+    right: 20px;
+    cursor: pointer;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #999;
+    transition: all 0.3s ease;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.modal-content .close:hover {
+    color: #FF6600;
+    background: rgba(255,102,0,0.1);
+    transform: rotate(90deg);
+}
+
+/* === Form Inputs === */
+input[type=text], 
+input[type=number], 
+input[type=email], 
+input[type=password], 
+input[type=time], 
+input[type=date], 
+select {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 5px 0 15px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+}
+
+input[type=text]:focus, 
+input[type=number]:focus, 
+input[type=email]:focus, 
+input[type=password]:focus, 
+input[type=time]:focus, 
+input[type=date]:focus, 
+select:focus {
+    outline: none;
+    border-color: #FF6600;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(255,102,0,0.1);
+    transform: translateY(-2px);
+}
+
+input[type=file] {
+    display: none;
+}
+
+label {
+    font-weight: 600;
+    font-size: 14px;
+    display: block;
+    margin-top: 15px;
+    color: #555;
+}
+
+/* === Modal Submit Buttons === */
+.modal-content button.submit {
+    background: linear-gradient(135deg, #FF6600 0%, #ff8533 100%);
+    color: white;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin-right: 10px;
+    box-shadow: 0 4px 15px rgba(255,102,0,0.3);
+}
+
+.modal-content button.submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(255,102,0,0.4);
+}
+
+/* === Add/Edit User Modal Specific UI === */
+.modal-content.user-modal {
+    max-width: 700px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-content.user-modal::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content.user-modal::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.modal-content.user-modal::-webkit-scrollbar-thumb {
+    background: #FF6600;
+    border-radius: 10px;
+}
+
+.user-modal h3 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: #FF6600;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.user-modal h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #FF6600;
+    border-radius: 2px;
+}
+
+/* Avatar preview */
+.avatar-preview {
+    width: 130px;
+    height: 130px;
+    border: 3px dashed #ddd;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.avatar-preview::before {
+    content: 'Click to upload';
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 11px;
+    color: #999;
+    transition: all 0.3s ease;
+}
+
+.avatar-preview:hover {
+    border-color: #FF6600;
+    background: rgba(255,102,0,0.05);
+    transform: scale(1.05);
+}
+
+.avatar-preview:hover::before {
+    color: #FF6600;
+}
+
+.avatar-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.avatar-preview:hover img {
+    transform: scale(1.1);
+}
+
+.avatar-preview .placeholder {
+    font-size: 2.5em;
+    color: #ccc;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.avatar-preview:hover .placeholder {
+    color: #FF6600;
+    transform: scale(1.2);
+}
+
+/* === View User Modal === */
+.modal-content.view-user {
+    max-width: 650px;
+}
+
+.view-user .read-details p {
+    margin-bottom: 12px;
+    font-size: 14px;
+    line-height: 1.8;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.view-user .read-details p:hover {
+    padding-left: 10px;
+    background: #f8f9fa;
+}
+
+.view-user .read-details p strong {
+    color: #FF6600;
+    display: inline-block;
+    min-width: 150px;
+    font-weight: 600;
+}
+
+/* === Delete Confirmation Modal === */
+.modal-content h3 {
+    margin-top: 0;
+}
+
+.modal-content p {
+    line-height: 1.8;
+}
+
+/* === Password Toggle === */
+.password-container {
+    position: relative;
+}
+
+.password-container input {
+    padding-right: 55px;
+}
+
+.password-container span {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #FF6600;
+    font-size: 13px;
+    user-select: none;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.password-container span:hover {
+    background: rgba(255,102,0,0.1);
+}
+
+/* === Footer === */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: linear-gradient(135deg, #FF6600 0%, #ff8533 100%);
+    color: white;
+    margin-top: 60px;
+    font-size: 14px;
+    box-shadow: 0 -4px 20px rgba(255,102,0,0.2);
+    animation: slideUp 0.6s ease-out;
+    position: relative;
+    z-index: 10;
+}
+
+/* === Animations === */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes expandWidth {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* === Responsive === */
+@media(max-width: 768px){
+    .stats-container { 
+        flex-direction: column; 
+    }
+    
+    nav ul { 
+        flex-direction: column; 
+        gap: 10px; 
+    }
+    
+    .modal-content { 
+        width: 95%;
+        max-width: none;
+        padding: 25px;
+    }
+    
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+    
+    header h1 {
+        font-size: 20px;
+    }
+    
+    table {
+        font-size: 12px;
+    }
+    
+    th, td {
+        padding: 10px;
+    }
+    
+    button {
+        padding: 7px 12px;
+        font-size: 12px;
+    }
+    
+    section h2 {
+        font-size: 22px;
+    }
+    
+    .stat-card {
+        padding: 20px;
+    }
+    
+    .stat-card .count {
+        font-size: 28px;
+    }
+}
+

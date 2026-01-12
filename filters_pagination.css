@@ -1,0 +1,260 @@
+/* ==== Modern Filter Styles ==== */
+.filter-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin: 25px 0;
+    flex-wrap: nowrap;
+}
+
+/* Header row helpers for admin pages */
+.header-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Move the search + filter controls to the right of the header row */
+.header-row .header-filters {
+    margin-left: auto;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    min-width: 200px;
+    justify-content: flex-end;
+}
+
+.filter-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.modern-select {
+    padding: 12px 40px 12px 15px;
+    border-radius: 25px;
+    border: 2px solid #ff9500;
+    background: #fffaf5;
+    font-size: 14px;
+    cursor: pointer;
+    appearance: none;
+    transition: all 0.3s ease;
+    min-width: 150px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23ff7b00' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 12px) center;
+    background-size: 12px;
+}
+
+.modern-select:focus {
+    border-color: #ff7b00;
+    box-shadow: 0 0 0 3px rgba(255, 123, 0, 0.1);
+    outline: none;
+}
+
+.modern-select:hover {
+    border-color: #ff7b00;
+    background-color: #fff5eb;
+}
+
+/* ==== Search Box ==== */
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.search-input {
+    padding: 12px 40px 12px 40px; /* left: space for search icon, right: space for clear button */
+    border-radius: 25px;
+    border: 2px solid #ff9500;
+    width: 100%;
+    font-size: 14px;
+    background: #fffaf5;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #ff7b00;
+    box-shadow: 0 0 0 3px rgba(255, 123, 0, 0.1);
+    outline: none;
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    color: #ff9500;
+    font-size: 14px;
+}
+
+.clear-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #999;
+    cursor: pointer;
+    display: none; /* hidden by default, JS will show when input has value */
+    user-select: none;
+    transition: color 0.2s ease;
+}
+
+.clear-btn:hover {
+    color: #ff7b00;
+}
+
+/* Optional: smooth fade effect when showing/hiding the button */
+.search-input:not(:placeholder-shown) + .clear-btn {
+    display: block;
+}
+
+
+/* ==== Pagination ==== */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-top: 1px solid rgba(255, 179, 102, 0.2);
+    flex-wrap: wrap;
+}
+
+.pagination a,
+.pagination strong {
+    padding: 8px 14px;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.pagination a:hover {
+    background-color: #ff7b00;
+    color: white;
+    border-color: #ff7b00;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.pagination a.current {
+    background-color: #ff7b00;
+    color: white;
+    border-color: #ff7b00;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.pagination strong {
+    background-color: #ff7b00;
+    color: white;
+    border-color: #ff7b00;
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+.pagination a[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* ==== Custom Dropdown ==== */
+.custom-dropdown {
+    width: 200px;
+    position: relative;
+    font-family: Poppins;
+}
+
+.custom-dropdown .cd-selected {
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: 2px solid #ff9500;
+    background: #fffaf5;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #533b27;
+    position: relative;
+    transition: 0.25s ease;
+}
+
+.custom-dropdown .cd-selected::after {
+    content: "\f078";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff7b00;
+}
+
+.custom-dropdown .cd-list {
+    list-style: none;
+    padding: 10px 0;
+    margin: 8px 0 0 0;
+    border-radius: 20px;
+    border: 2px solid #ff9500;
+    background: white;
+    position: absolute;
+    width: 100%;
+    display: none;
+    z-index: 999;
+    box-shadow: 0 10px 25px rgba(255, 149, 0, 0.25);
+    animation: fadeIn 0.15s ease;
+}
+
+.custom-dropdown .cd-list li {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+    border-radius: 15px;
+    margin: 5px 10px;
+}
+
+.custom-dropdown .cd-list li:hover {
+    background: #ffe5c4;
+    color: #ff7b00;
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 768px) {
+    .filter-container {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .search-input {
+        width: 100%;
+        min-width: 200px;
+    }
+    
+    .modern-select {
+        min-width: 140px;
+    }
+
+    /* On small screens, make header-filters stack under the H2 and stretch */
+    .header-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .header-row .header-filters {
+        margin-left: 0;
+        justify-content: flex-start;
+        width: 100%;
+    }
+}

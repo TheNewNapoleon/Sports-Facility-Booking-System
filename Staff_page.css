@@ -1,0 +1,333 @@
+/* ==== Staff Page Specific Styles ==== */
+/* This combines dashboard.php and admin events functionality */
+
+/* ==== Admin Table Styles (from admin_dashboard.php) ==== */
+.admin-table-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.admin-table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    border-bottom: 1px solid #eee;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.admin-table-header h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+    flex-shrink: 0;
+}
+
+.header-filters {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex: 1;
+    min-width: 300px;
+}
+
+/* ==== Admin Table ==== */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table thead {
+    background: #f8f9fa;
+}
+
+.admin-table th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    color: #666;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.admin-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+.admin-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.admin-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ==== Search Box in Header ==== */
+.admin-table-header .search-box {
+    position: relative;
+    flex: 1;
+    max-width: 400px;
+}
+
+.admin-table-header .search-input {
+    width: 100%;
+    padding: 10px 40px 10px 40px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.admin-table-header .search-input:focus {
+    outline: none;
+    border-color: #FF6600;
+}
+
+.admin-table-header .search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+.admin-table-header .clear-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #999;
+    font-size: 20px;
+    display: none;
+    font-weight: bold;
+}
+
+.admin-table-header .clear-btn:hover {
+    color: #333;
+}
+
+/* ==== Dashboard Tabs (existing from dashboard.php) ==== */
+.dashboard-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ff7300;
+    padding-bottom: 10px;
+}
+
+.tab-btn {
+    background: transparent;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;
+    border-radius: 8px 8px 0 0;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    background: rgba(255, 115, 0, 0.1);
+    color: #ff7300;
+}
+
+.tab-btn.active {
+    background: #ff7300;
+    color: white;
+}
+
+.tab-btn i {
+    margin-right: 8px;
+}
+
+/* ==== Tab Content (existing from dashboard.php) ==== */
+.tab-content {
+    display: none;
+    gap: 20px;
+}
+
+.tab-content[style*="display:grid"] {
+    display: grid !important;
+}
+
+/* ==== Event Cards (existing from dashboard.php) ==== */
+.event-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-left: 4px solid #ff7300;
+}
+
+.event-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.card-preview {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.card-time {
+    color: #999;
+    font-size: 14px;
+}
+
+.card-title {
+    font-weight: 600;
+    color: #333;
+    font-size: 16px;
+    flex: 1;
+}
+
+.card-full {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    color: #666;
+    line-height: 1.6;
+}
+
+.card-full p {
+    margin: 8px 0;
+}
+
+.card-full i {
+    margin-right: 8px;
+    color: #ff7300;
+}
+
+/* ==== Empty States ==== */
+.empty-events {
+    text-align: center;
+    padding: 40px;
+    color: #999;
+    font-size: 16px;
+}
+
+/* ==== Pagination (existing from dashboard.php) ==== */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 179, 102, 0.2);
+    flex-wrap: wrap;
+}
+
+.pagination a,
+.pagination strong {
+    padding: 8px 14px;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.pagination a:hover {
+    background-color: #ff7b00;
+    color: white;
+    border-color: #ff7b00;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.pagination strong {
+    background-color: #ff7b00;
+    color: white;
+    border-color: #ff7b00;
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+/* ==== Responsive Design ==== */
+@media screen and (max-width: 768px) {
+    .admin-table-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .header-filters {
+        flex-direction: column;
+        align-items: stretch;
+        min-width: 100%;
+    }
+    
+    .admin-table-header .search-box {
+        max-width: 100%;
+    }
+    
+    .admin-table {
+        font-size: 13px;
+    }
+    
+    .admin-table th,
+    .admin-table td {
+        padding: 10px;
+    }
+    
+    .dashboard-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .tab-btn {
+        font-size: 14px;
+        padding: 10px 18px;
+    }
+    
+    .event-card {
+        padding: 15px;
+    }
+    
+    .card-preview {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .admin-table-header h2 {
+        font-size: 18px;
+    }
+    
+    .admin-table th {
+        font-size: 11px;
+        padding: 8px;
+    }
+    
+    .admin-table td {
+        font-size: 12px;
+        padding: 8px;
+    }
+    
+    .event-card {
+        padding: 12px;
+    }
+    
+    .card-title {
+        font-size: 14px;
+    }
+    
+    .card-time {
+        font-size: 12px;
+    }
+}

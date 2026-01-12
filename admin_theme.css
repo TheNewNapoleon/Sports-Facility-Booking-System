@@ -1,0 +1,93 @@
+:root{
+    --orange: #ff6a00;
+    --orange-600: #ff7a1a;
+    --orange-700: #e65a00;
+    --bg: #ffffff;
+    --muted: #6b7280;
+    --surface: #fbfbfb;
+    --card-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    --radius: 10px;
+    --sidebar-width: 220px;
+}
+
+/* Base adjustments for admin pages */
+body{
+    background: linear-gradient(180deg, #fbfbfb 0%, #ffffff 100%);
+    color: #222;
+    font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+.dashboard-container{display:flex;min-height:100vh}
+
+.sidebar{
+    width:var(--sidebar-width);
+    background:var(--bg);
+    border-right:1px solid #f0f0f0;
+    padding:18px 12px;
+    box-sizing:border-box;
+}
+.sidebar .sidebar-header img{max-width:110px;display:block;margin:0 auto 12px}
+.sidebar a{display:block;color:#333;padding:8px 12px;border-radius:8px;margin:6px 4px;text-decoration:none}
+.sidebar a.active{background: rgba(255,106,0,0.08);color:var(--orange-700);font-weight:600}
+.sidebar a:hover{background:#fff7f1}
+
+.main-area{flex:1;background:transparent}
+
+.topnav{
+    position:fixed;
+    top:0;
+    left:var(--sidebar-width);
+    right:0;
+    height:60px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 20px;
+    background: linear-gradient(90deg,var(--orange),var(--orange-600));
+    color:white;
+    z-index:60;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.topnav .nav-left h1{font-size:18px;margin:0;font-weight:600}
+.topnav .nav-right a.logout-btn{color:white;text-decoration:none;padding:8px 12px;border-radius:8px;background:rgba(255,255,255,0.06)}
+
+.main-content{padding:84px 24px 32px 24px;min-height:calc(100vh - 60px);box-sizing:border-box}
+
+.stats-container{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.stat-card{flex:1 1 220px;background:var(--bg);padding:16px;border-radius:var(--radius);box-shadow:var(--card-shadow);border-left:4px solid var(--orange);}
+.stat-card h3{margin:0;font-size:14px;color:var(--muted)}
+.stat-card .count{display:block;font-size:28px;font-weight:700;color:#111;margin-top:8px}
+
+/* Tables */
+table{width:100%;border-collapse:collapse;background:var(--bg);box-shadow:var(--card-shadow);border-radius:8px;overflow:hidden}
+thead th{background:#fff7f1;color:var(--muted);text-align:left;padding:12px 16px;font-weight:600}
+tbody td{padding:12px 16px;border-top:1px solid #f4f4f4}
+tbody tr:hover{background:#fffdfa}
+
+/* Buttons */
+.add-btn,button.add,button.submit,.approve,button.edit,button.view{background:var(--orange);color:white;border:none;padding:8px 12px;border-radius:8px;cursor:pointer}
+.delete,button.delete{background:#d32f2f;color:white;border:none;padding:8px 12px;border-radius:8px;cursor:pointer}
+.toggle{background:#6c757d;color:white;border:none;padding:6px 10px;border-radius:8px}
+
+/* Modal adjustments */
+.modal-content{background:var(--bg);border-radius:10px;box-shadow:var(--card-shadow);padding:18px}
+
+/* Responsive tweaks */
+@media (max-width:900px){
+    .sidebar{display:none}
+    .topnav{left:0}
+    .main-content{padding-left:18px;padding-right:18px}
+}
+
+/* Small helpers */
+.avatar{width:40px;height:40px;border-radius:6px;object-fit:cover}
+.logout-btn i{margin-left:6px}
+
+/* Notifications */
+.notif-badge{background:#fff;color:var(--orange);padding:2px 6px;border-radius:999px;font-weight:700}
+
+/* form inputs */
+input[type="text"],input[type="email"],input[type="date"],select,textarea{padding:8px 10px;border:1px solid #e8e8e8;border-radius:6px}
+
+/* make sure topnav doesn't cover content */
+.main-content section{margin-top:0}
